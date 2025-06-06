@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jar Scents Perfume Bar</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="https://i.imgur.com/epYXo32.png" alt="Jar Scents Logo" class="logo">
+    <h1 class="title">Jar Scents</h1>
+    <p class="tagline">Memories preserved in fragrance</p>
+  </header>
+
+  <section id="calculator">
+    <h2>Select Your Perfume Bar Package</h2>
+    <form id="calculator-form">
+     <div class="option-group">
+  <p class="option-label">Bottle Size</p>
+  <div class="button-grid">
+    <button type="button" class="option-btn" data-type="bottle" data-value="10ml">Travel Size<br><small>10ml bottle</small></button>
+    <button type="button" class="option-btn" data-type="bottle" data-value="30ml">Standard Size<br><small>30ml bottle</small></button>
+  </div>
+</div>
+
+
+<div class="option-group">
+  <p class="option-label">Number of People</p>
+  <div class="button-grid">
+    <button type="button" class="option-btn" data-type="people" data-value="50">50<br><small>guests</small></button>
+    <button type="button" class="option-btn" data-type="people" data-value="100">100<br><small>guests</small></button>
+    <button type="button" class="option-btn" data-type="people" data-value="150">150<br><small>guests</small></button>
+    <button type="button" class="option-btn" data-type="people" data-value="200">200<br><small>guests</small></button>
+  </div>
+</div>
+
+
+<div class="option-group">
+  <p class="option-label">Number of Perfume Sets</p>
+  <div class="button-grid">
+    <button type="button" class="option-btn" data-type="scents" data-value="3">3 Sets<br><small>Curated fragrances</small></button>
+    <button type="button" class="option-btn" data-type="scents" data-value="4">4 Sets<br><small>Curated fragrances</small></button>
+  </div>
+</div>
+
+<div class="option-group">
+  <p class="option-label">Number of Hours</p>
+  <div class="button-grid">
+    <button type="button" class="option-btn" data-type="hours" data-value="2">2 Hours</button>
+    <button type="button" class="option-btn" data-type="hours" data-value="3">3 Hours</button>
+    <button type="button" class="option-btn" data-type="hours" data-value="4">4 Hours</button>
+  </div>
+</div>
+
+      <label>Event Type:
+        <select id="event-type" name="event" required>
+          <option value="">Select event type</option>
+          <option>Wedding</option>
+          <option>Birthday</option>
+          <option>Company Event</option>
+          <option value="Others">Others</option>
+        </select>
+      </label>
+
+      <label id="custom-event-label" style="display:none;">Please specify:
+        <input type="text" id="custom-event" name="customEvent" placeholder="e.g., Product Launch"/>
+      </label>
+
+      <p class="price-output">Estimated Price: <span id="price">₱0</span></p>
+
+      <button type="button" id="show-reservation">Reserve Now</button>
+    </form>
+  </section>
+
+  <section id="reservation-section" style="display:none;">
+    <h2>Reservation Form</h2>
+    <form id="reservation-form" action="https://formsubmit.co/getjarscents@gmail.com" method="POST">
+      <label>Name:
+        <input type="text" name="name" required />
+      </label>
+      <label>Contact Number:
+        <input type="tel" name="phone" required />
+      </label>
+      <label>Email Address:
+        <input type="email" name="email" required />
+      </label>
+      <label>Date of Event:
+        <input type="date" name="eventDate" required />
+      </label>
+      <label>Place of Event:
+        <input type="text" name="eventPlace" required />
+      </label>
+      <label>Theme of Event:
+        <input type="text" name="eventTheme" required />
+      </label>
+<input type="hidden" name="Bottle Size" id="hidden-bottle">
+<input type="hidden" name="People" id="hidden-people">
+<input type="hidden" name="Scents" id="hidden-scents">
+<input type="hidden" name="Hours" id="hidden-hours">
+<input type="hidden" name="Event Type" id="hidden-event">
+<input type="hidden" name="Estimated Price" id="hidden-price">
+
+<!-- Prevent spam bots -->
+<input type="hidden" name="_captcha" value="false">
+
+<!-- Redirect to thank you page or refresh -->
+<input type="hidden" name="_next" value="https://rosarysa.github.io/jarscents/thank-you.html">
+
+<!-- Custom subject in email -->
+<input type="hidden" name="_subject" value="New Perfume Bar Reservation!">
+
+      <button type="submit">Submit Reservation</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Contact us:</p>
+    <p>Email: <a href="mailto:getjarscents@gmail.com">getjarscents@gmail.com</a></p>
+    <p>Facebook: <a href="https://www.facebook.com/getjarscents" target="_blank">facebook.com/getjarscents</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
