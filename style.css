@@ -1,0 +1,134 @@
+/* === GLOBAL STYLES === */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #fffdf8, #fefaf1);
+  color: #222;
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+h1.title {
+  font-family: 'Intro Rust', serif;
+  font-size: 3rem;
+  color: black;
+  margin: 0.5rem 0 0;
+}
+
+.tagline {
+  font-family: 'Amoresa', cursive;
+  font-size: 1.25rem;
+  color: #6c6c6c;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  max-width: 100px;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+/* === FORM STYLING === */
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.4rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: gold;
+  color: black;
+}
+
+/* === PRICE DISPLAY === */
+.price-output {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fafafa;
+  border: 1px dashed #ccc;
+  border-radius: 10px;
+  text-align: center;
+}
+.option-group {
+  margin-top: 2rem;
+}
+
+.option-label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.button-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.option-btn {
+  flex: 1 1 40%;
+  padding: 1rem;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #333; /* Ensures text is visible */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.option-btn small {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.3rem;
+}
+
+.option-btn:hover {
+  border-color: gold;
+  background-color: #fffbe7;
+}
+
+.option-btn.active {
+  border-color: black;
+  background-color: gold;
+  color: black;
+  font-weight: bold;
+}
+
+.option-btn:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: not-allowed;
+  border-color: #ccc;
+}
+
