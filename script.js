@@ -9,8 +9,9 @@ const allowedCombos = {
   "30ml": {
     "50-4-2": 7099,
     "100-3-2": 9999,
-    "50-4-3": 14999,
-    "50-4-4": 18999
+    "100-4-3": 10999,
+    "150-4-3": 14999,
+    "200-4-4": 18999
   }
 };
 
@@ -76,19 +77,47 @@ function updateValidOptions() {
   const validScents = new Set(validKeys.map(k => k.split("-")[1]));
   const validHours = new Set(validKeys.map(k => k.split("-")[2]));
 
+  const selectedPeople = selected.people;
+
+  // Disable invalid hour options based on people count
+  document.querySelectorAll('.option-btn[data-type="hours"]').forEach(btn => {
+    const val = btn.getAttribute("data-value");
+
+    const shouldDisable =
+      (selectedPeople === "50" && (val === "3" || val === "4")) ||
+      (selectedPeople === "100" && val === "4") ||
+      (selectedPeople === "150" && (val === "2" || val === "4")) ||
+      (selectedPeople === "200" && (val === "2" || val === "3"));
+
+    if (shouldDisable) {
+      btn.disabled = true;
+      btn.classList.remove("active");
+      btn.setAttribute("title", "Unavailable for selected number of people");
+    } else {
+      btn.removeAttribute("title");
+      btn.disabled = !validHours.has(val);
+    }
+  });
+
+  // Disable people options
   document.querySelectorAll('.option-btn[data-type="people"]').forEach(btn => {
     const val = btn.getAttribute("data-value");
     btn.disabled = !validPeople.has(val);
   });
 
+  // Disable perfume sets (scents)
   document.querySelectorAll('.option-btn[data-type="scents"]').forEach(btn => {
     const val = btn.getAttribute("data-value");
-    btn.disabled = !validScents.has(val);
-  });
+    const shouldDisable = (val === "3" && selectedPeople !== "100");
 
-  document.querySelectorAll('.option-btn[data-type="hours"]').forEach(btn => {
-    const val = btn.getAttribute("data-value");
-    btn.disabled = !validHours.has(val);
+    if (shouldDisable) {
+      btn.disabled = true;
+      btn.classList.remove("active");
+      btn.setAttribute("title", "3 sets only available for 100 guests");
+    } else {
+      btn.removeAttribute("title");
+      btn.disabled = !validScents.has(val);
+    }
   });
 }
 

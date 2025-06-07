@@ -1,14 +1,19 @@
 /* === GLOBAL STYLES === */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #fffdf8, #fefaf1);
+  background-image: url('https://i.imgur.com/p3bWdL7.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #222;
   padding: 2rem;
   max-width: 800px;
   margin: auto;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  backdrop-filter: blur(4px);
 }
+
 
 h1.title {
   font-family: 'Intro Rust', serif;
@@ -98,12 +103,14 @@ button:hover {
   text-align: center;
   border: 2px solid #ccc;
   border-radius: 10px;
-  background-color: #fff;
-  color: #333; /* Ensures text is visible */
-  font-weight: 500;
+  background-color: #ffffff;
+  color: #222;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 1rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 
 .option-btn small {
@@ -113,22 +120,61 @@ button:hover {
   margin-top: 0.3rem;
 }
 
-.option-btn:hover {
+/* ✨ Clear hover glow for clickable buttons */
+.option-btn:not(:disabled):hover {
   border-color: gold;
   background-color: #fffbe7;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
 }
 
+/* ✅ Selected (active) button style */
 .option-btn.active {
   border-color: black;
   background-color: gold;
   color: black;
   font-weight: bold;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
 }
 
+/* 🚫 Unclickable (disabled) button style */
 .option-btn:disabled {
-  background-color: #eee;
-  color: #aaa;
+  background-color: #eaeaea;
+  color: #999;
   cursor: not-allowed;
-  border-color: #ccc;
+  border: 2px dashed #bbb;
+  box-shadow: none;
+  opacity: 0.5;
+  filter: grayscale(100%);
 }
 
+
+
+
+.banner-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.contact-section {
+  background-image: url('https://i.imgur.com/o4ZOxiv.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-top: 3rem;
+  color: #222;
+}
+
+.contact-section a {
+  color: #222;
+  text-decoration: underline;
+}
